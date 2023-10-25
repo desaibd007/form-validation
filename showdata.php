@@ -43,7 +43,8 @@ $firms = $conn->query($query);
     <td><?php  echo $firm['mobile'] ?></td>
     <td><?php  echo $firm['dob'] ?></td>
     <td><?php  echo $firm['gender'] ?></td>
-    <td><button><a href="delete.php?id=<?php echo $firm['id'] ?>">click</button></a></td>
+    <td><button><a href="delete.php?id=<?php echo $firm['id'] ?>" target="_blank">Delete</button></a>
+    <button><a href="update.php?iid=<?php echo $firm['id'] ?>" target="_blank">Update</button></a></td>
   </tr>
   <?php $i++; } ?>
   </tbody>

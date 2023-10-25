@@ -1,22 +1,30 @@
 <?php
   include 'databaseconnect.php';
-
-if(isset($_POST['submit']))  {
+    
+    if(isset($_POST['submit']))  {
     $name = $_POST['name'];
     $address=$_POST['address'];
     $gender=$_POST['gender'];
     $age = $_POST['dob'];
     $mobile=$_POST['mobile'];
+    
     $email=$_POST['email'];
     $password =$_POST['password'];
 
+    $sqlu = "SELECT * FROM formdata WHERE mobile='$mobile' OR email='$email' "; 
+    $resultu = $conn->query($sqlu);
+    if ($resultu->num_rows > 0) 
+    {
+        echo "<script>alert('This Email Or Phone Already Registered');</script>"; 
+    }
+    else
+    { 
    $sql = "INSERT INTO  `formdata`(name,address,gender,mobile,dob,email,password) VALUES 
-    ('$name','$address','$gender' ,'$age','$mobile','$email','$password' )";
+    ('$name','$address','$gender','$mobile','$age','$email','$password' )";
     //IF VALUE ADD IN  DATABASE AUR NOT
     if ($conn->query($sql) === TRUE) {
-        echo "form is sumbited";
-}
-
+        echo "form is sumbited";}
+    }
 }
 
 ?>
@@ -31,9 +39,6 @@ if(isset($_POST['submit']))  {
 </head>
 
 <body>
-
-
-
 <div class="div1">
     <form method="post">
         <H1>Plase Enter your Detile the Enter this Form Validation</H1>
