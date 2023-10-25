@@ -29,8 +29,7 @@ if(isset($_POST['submit']))
     }
 
 }
-
-    $id= $_GET['iid'];
+     $id= $_GET['iid'];
     $sqlgt = "SELECT * FROM formdata WHERE id='$id'";
 	$resultgt = mysqli_query($conn, $sqlgt);
 	$firmgt = mysqli_fetch_array($resultgt);
