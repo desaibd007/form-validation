@@ -7,7 +7,7 @@ if(isset($_GET['iid']))  {
 
 if(isset($_POST['submit'])) 
  {
-    $id= $_GET['id'];
+    $id= $_GET['iid'];
     $name = $_POST['name'];
     $address=$_POST['address'];
     $gender=$_POST['gender'];

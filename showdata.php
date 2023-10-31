@@ -36,7 +36,7 @@ $firms = $conn->query($query);
   <tbody>
   <?php $i=1; while ($firm = $firms->fetch_assoc()) { ?>
   <tr class="w3-hover-green">
-    <td><?php echo $i;  ?></td>
+    <td><?php  echo $i;  ?></td>
     <td><?php  echo $firm['name'] ?></td>
     <td><?php  echo $firm['address'] ?></td>
     <td><?php  echo $firm['email'] ?></td>

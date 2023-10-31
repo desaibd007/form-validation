@@ -7,8 +7,7 @@
     $gender=$_POST['gender'];
     $age = $_POST['dob'];
     $mobile=$_POST['mobile'];
-    
-    $email=$_POST['email'];
+     $email=$_POST['email'];
     $password =$_POST['password'];
 
     $sqlu = "SELECT * FROM formdata WHERE mobile='$mobile' OR email='$email' "; 
