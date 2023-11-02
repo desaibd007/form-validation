@@ -16,9 +16,9 @@ if(isset($_POST['submit']))
     $email=$_POST['email'];
     $password =$_POST['password'];
 
-    $sql5 = 'UPDATE formdata SET name="'.$name.'", email="'.$email.'",address="'.$address.'",gender="'.$gender.'",mobile="'.$mobile.'",dob="'.$age.'", password="'.$password.'" where `id`="'.$id.'"'; 
-    $conn->query($sql5);
-    if ($conn->query($sql5) === TRUE) 
+    $sql = 'UPDATE formdata SET name="'.$name.'", email="'.$email.'",address="'.$address.'",gender="'.$gender.'",mobile="'.$mobile.'",dob="'.$age.'", password="'.$password.'" where `id`="'.$id.'"'; 
+    $conn->query($sql);
+    if ($conn->query($sql) === TRUE) 
     {
         
         echo "<script>alert('Profile Update Sucessfully')</script>";
@@ -29,7 +29,7 @@ if(isset($_POST['submit']))
     }
 
 }
-     $id= $_GET['iid'];
+    $id= $_GET['iid'];
     $sqlgt = "SELECT * FROM formdata WHERE id='$id'";
 	$resultgt = mysqli_query($conn, $sqlgt);
 	$firmgt = mysqli_fetch_array($resultgt);
@@ -54,7 +54,7 @@ if(isset($_POST['submit']))
         Address :-
         <input type="text" name="address" id="address" class="address" value="<?php echo $firmgt['address']; ?>"  required placeholder="Enter your Address"></br></br>
         Gender:-
-        <input type="radio" name="gender" value="<?php echo$firmgt['gender'];?>" required>Female
+        <input type="radio" name="gender" value="<?php echo $firmgt['gender'];?>" required>Female
         <input type="radio" name="gender" value="<?php echo $firmgt['gender'];?>" required>Male
         <input type="radio" name="gender" value="<?php echo $firmgt['gender'];?>" required >Other</br></br>
         D.O.B:-
